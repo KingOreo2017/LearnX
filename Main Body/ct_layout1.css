@@ -1,20 +1,4 @@
 @charset "utf-8";
-/*
-   New Perspectives on HTML5 and CSS3, 7th Edition
-   Tutorial 1
-   Tutorial Case
-   Filename: ct_layout1.css
-
-   This file contains the layout styles used in the ct_start.html page.
-
-*/
-
-/* =============================================
-	Base layout styles used by mobile devices
-	up to 480px and cascaded to larger devices 
-	unless superceded by other styles.
-   =============================================
-*/
 
 html {
 	height: 100%;
