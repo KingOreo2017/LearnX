@@ -1,55 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <title>Learn X</title>
+<title>Learn X</title>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
    <link href="/LearnX/Login/lxbase.css" rel="stylesheet" />
    <link href="/LearnX/Main Body/ct_layout2.css" rel="stylesheet" />
-	<head>
-		<title>
-			LearnX
-		<style>
-			.center-text {
-				text-align: center;
-			}
-		</style>
-		<script>
-			src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-			function onSignIn(googleUser) {
-			  var profile = googleUser.getBasicProfile();
-			  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-			  console.log('Name: ' + profile.getName());
-			  console.log('Image URL: ' + profile.getImageUrl());
-			  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-			}	
-			function signOut() {
-            			var auth2 = gapi.auth2.getAuthInstance();
-            			auth2.signOut().then(function () {
-                		console.log('User signed out.');
-            			});
-			}
-		</script>
-		<style>
-        		/* Style the button */
-        		.myButton {
-            		width: 500px; /* Set the desired width */
-            		height: 200px; /* Set the desired height */
-            		font-size: 16px; /* Set the font size if needed */
-        		}
-    		</style>
-	</head>
-	<body>
-		
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Google</title>
+    <!-- Include the Google Sign-In API script with your client ID -->
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #login-container {
+            margin: 50px auto;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container">
+        <h2>Login with Google</h2>
+        <!-- Google Sign-In button -->
+        <div class="g-signin2" data-onsuccess="onSignIn" data-clientid="1038072562020-u8utb29i7ar019meg66h8qpcr8em2pjc.apps.googleusercontent.com"></div>
+        <!-- Sign-out button (hidden by default) -->
+        <button id="signOutBtn" onclick="signOut()" style="display: none;">Sign Out</button>
+    </div>
 
-		<div class="center-text">
-			<header>
-				<img src="/LearnX/Images/LearnXBanner.png" alt="LearnX" </a>
-				<h1>Login</h1>
-			</header>
-			<div class="g-signin2" data-onsuccess="onSignIn"></div>
-			<div class="g-signin2" data-width="500" data-onsuccess="onSignIn"></div>
-			<button onclick="signOut()">Sign Out</button>
-		</div>
-	</body>
+    <script>
+        // Initialize the Google Sign-In API with your client ID
+        function init() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init({
+                    client_id: '1038072562020-u8utb29i7ar019meg66h8qpcr8em2pjc.apps.googleusercontent.com',
+                });
+            });
+        }
+
+        // Callback function when Google Sign-In is successful
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+
+            // Display the sign-out button and hide the sign-in button
+            document.getElementById('signOutBtn').style.display = 'block';
+            document.querySelector('.g-signin2').style.display = 'none';
+        }
+
+        // Function to sign out
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+                // Hide the sign-out button and display the sign-in button
+                document.getElementById('signOutBtn').style.display = 'none';
+                document.querySelector('.g-signin2').style.display = 'block';
+            });
+        }
+    </script>
+</body>
 </html>
