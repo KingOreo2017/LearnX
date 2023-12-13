@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Learn X</title>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <link href="/LearnX/Login/lxbase.css" rel="stylesheet" />
-   <link href="/LearnX/Main Body/ct_layout2.css" rel="stylesheet" />
-	
+    <title>Learn X</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/LearnX/Login/lxbase.css" rel="stylesheet" />
+    <link href="/LearnX/Main Body/ct_layout2.css" rel="stylesheet" />
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login with Google</title>
@@ -22,15 +22,41 @@
             margin: 50px auto;
             max-width: 300px;
         }
+        .custom-buttons {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        .custom-buttons button {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #signInBtn {
+            background-color: #4285F4;
+        }
+        #signOutBtn {
+            background-color: #D32F2F;
+        }
     </style>
 </head>
 <body>
     <div id="login-container">
         <h2>Login with Google</h2>
-        <!-- Google Sign-In button -->
-        <div class="g-signin2" data-onsuccess="onSignIn" data-clientid="1038072562020-u8utb29i7ar019meg66h8qpcr8em2pjc.apps.googleusercontent.com"></div>
-        <!-- Sign-out button (hidden by default) -->
+        <!-- Custom sign-in button -->
+        <button id="signInBtn" onclick="signIn()">Sign In with Google</button>
+        <!-- Custom sign-out button (hidden by default) -->
         <button id="signOutBtn" onclick="signOut()" style="display: none;">Sign Out</button>
+        <!-- Custom buttons for user interaction -->
+        <div class="custom-buttons">
+            <button onclick="customFunction1()">Custom Function 1</button>
+            <button onclick="customFunction2()">Custom Function 2</button>
+        </div>
     </div>
 
     <script>
@@ -40,6 +66,25 @@
                 gapi.auth2.init({
                     client_id: '1038072562020-u8utb29i7ar019meg66h8qpcr8em2pjc.apps.googleusercontent.com',
                 });
+            });
+        }
+
+        // Custom sign-in function
+        function signIn() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signIn().then(function(googleUser) {
+                onSignIn(googleUser);
+            });
+        }
+
+        // Custom sign-out function
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+                // Hide the sign-out button and display the sign-in button
+                document.getElementById('signOutBtn').style.display = 'none';
+                document.getElementById('signInBtn').style.display = 'block';
             });
         }
 
@@ -53,18 +98,18 @@
 
             // Display the sign-out button and hide the sign-in button
             document.getElementById('signOutBtn').style.display = 'block';
-            document.querySelector('.g-signin2').style.display = 'none';
+            document.getElementById('signInBtn').style.display = 'none';
         }
 
-        // Function to sign out
-        function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
-                // Hide the sign-out button and display the sign-in button
-                document.getElementById('signOutBtn').style.display = 'none';
-                document.querySelector('.g-signin2').style.display = 'block';
-            });
+        // Custom functions for additional user interaction
+        function customFunction1() {
+            // Add your custom functionality here
+            console.log('Custom Function 1');
+        }
+
+        function customFunction2() {
+            // Add your custom functionality here
+            console.log('Custom Function 2');
         }
     </script>
 </body>
