@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-   <header>
-      <a href="/LearnX/Login/index.html"><img src="/LearnX/Images/LearnXBanner.png" alt="Learn X"/></a>
+    <header>
+        <a href="index.html"><img src="/LearnX/Images/LearnXBanner.png" alt="Learn X"/></a>
 <head>
     <title>Learn X</title>
     <meta charset="utf-8" />
@@ -56,8 +56,8 @@
         <button id="signOutBtn" onclick="signOut()" style="display: none;">Sign Out</button>
         <!-- Custom buttons for user interaction -->
         <div class="custom-buttons">
-            <button onclick="customFunction1()">Custom Function 1</button>
-            <button onclick="customFunction2()">Custom Function 2</button>
+            <button onclick="loginForStudents()">Login for Students</button>
+            <button onclick="loginForTeachers()">Login for Teachers</button>
         </div>
     </div>
 
@@ -103,20 +103,24 @@
             document.getElementById('signInBtn').style.display = 'none';
         }
 
-        // Custom function to prompt for username and password
-        function customFunction1() {
-            var username = prompt('Enter your username:');
-            var password = prompt('Enter your password:');
+        // Custom function to prompt for username and password for students
+        function loginForStudents() {
+            var username = prompt('Enter your student username:');
+            var password = prompt('Enter your student password:');
 
             // Do something with the entered username and password (e.g., validate or process)
-            console.log('Username:', username);
-            console.log('Password:', password);
+            console.log('Student Username:', username);
+            console.log('Student Password:', password);
         }
 
-        // Custom function placeholder
-        function customFunction2() {
-            // Add your custom functionality here
-            console.log('Custom Function 2');
+        // Custom function to prompt for username and password for teachers
+        function loginForTeachers() {
+            var username = prompt('Enter your teacher username:');
+            var password = prompt('Enter your teacher password:');
+
+            // Do something with the entered username and password (e.g., validate or process)
+            console.log('Teacher Username:', username);
+            console.log('Teacher Password:', password);
         }
     </script>
 </body>
