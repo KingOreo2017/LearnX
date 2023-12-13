@@ -11,18 +11,18 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login with Google</title>
+    <title> Login </title>
     <!-- Include the Google Sign-In API script with your client ID -->
     <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
         }
         #login-container {
-            margin: 50px auto;
-            max-width: 300px;
+            margin: 75px auto;
+            max-width: 375px;
         }
         .custom-buttons {
             display: flex;
@@ -99,8 +99,8 @@
             auth2.signOut().then(function () {
                 console.log('User signed out.');
                 // Hide the sign-out button and display the sign-in button
-                document.getElementById('signOutBtn').style.display = 'none';
-                document.getElementById('signInBtn').style.display = 'block';
+                document.getElementById('signOutBtn').style.display;
+                document.getElementById('signInBtn').style.display;
             });
         }
 
@@ -113,8 +113,8 @@
             console.log('Email: ' + profile.getEmail());
 
             // Display the sign-out button and hide the sign-in button
-            document.getElementById('signOutBtn').style.display = 'block';
-            document.getElementById('signInBtn').style.display = 'none';
+            document.getElementById('signOutBtn').style.display;
+            document.getElementById('signInBtn').style.display;
         }
 
         // Custom function to prompt for username and password for students
