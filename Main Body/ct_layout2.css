@@ -18,12 +18,12 @@ body {
 	min-height: 100%;
 }
 nav {
-	width: 25%;
+	width: 10%;
 	float: left;
 	margin: 6% 2% 0% 0%;
 }
 article {
-	width: 73%;
+	width: 85%;
 	float: left;
 	font-size: 0.8em;
 	text-align: justify;
