@@ -84,7 +84,7 @@ nav a img {
 }
 
 nav a:nth-of-type(4) {
-	//clear: left
+	clear: left
 }
 
 
