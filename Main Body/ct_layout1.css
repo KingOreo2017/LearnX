@@ -10,9 +10,8 @@ img, object, embed, video {
 header {
 	
 	width: 100%;
-	float: center;
-	clear: center;
-	margin: 25px;
+	
+	margin: 25px auto;
 }
 body {
 	margin-left: auto;
@@ -20,8 +19,6 @@ body {
 	width: 81.9%;
 	padding-left: 4.45%;
 	padding-right: 4.45%;
-	clear: none;
-	float: none;
 	min-height: 100%;
 }
 nav a {
@@ -67,8 +64,6 @@ body {
 	width: 91.14%;
 	padding-left: 0.93%;
 	padding-right: 0.93%;
-	clear: none;
-	float: none;
 	margin-left: auto;
 }
 nav a {
@@ -103,7 +98,7 @@ html, body {
 }
 html {
 	background-color: rgba(163, 228, 215,1.00);
-	margin: 0px auto;
+	margin: 0 auto;
 }
 body {
 	width: 88.2%;
@@ -111,8 +106,6 @@ body {
 	padding-left: 0.9%;
 	padding-right: 0.9%;
 	margin: auto;
-	clear: none;
-	float: none;
 	margin-left: auto;
 	background-color: #DFF5F1; /*This is light blue I think on the main page behind the pictures and below this should change the big background to dark teal/blue */
 	-moz-box-shadow: rgba(20, 143, 119, 0.9) 20px 0px 25px,  rgba(20, 143, 119, 0.9) -20px 0px 25px;
