@@ -10,8 +10,8 @@ img, object, embed, video {
 header {
 	
 	width: 96%;
-	float: none;
-	margin: 5px 5px;
+	float: center;
+	margin: 25px 25px;
 }
 body {
 	margin-left: auto;
