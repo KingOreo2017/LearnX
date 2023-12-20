@@ -165,8 +165,8 @@ dl {
 	text-align: left;
 }
 article img {
-	float: right;
-	width: 40%;
+	float: top;
+	width: 70%;
 	margin: 0% 2% 2% 2%;
 }
 nav ul li {
