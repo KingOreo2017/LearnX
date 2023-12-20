@@ -11,6 +11,7 @@ header {
 	
 	width: 100%;
 	float: center;
+	clear: center;
 	margin: 25px;
 }
 body {
@@ -26,11 +27,11 @@ body {
 nav a {
 	clear: both;
 	margin-left: 0;
-	width: 50px;
-	float: left;
+	width: 25px;
+	float: none;
 	display: grid;
-	grid-template-columns: repeat(3,1fr);
-	height: 50px;
+	grid-template-columns: repeat(3,2);
+	height: 25px;
 	overflow: hidden;
 	margin-bottom: 5px;
 }
