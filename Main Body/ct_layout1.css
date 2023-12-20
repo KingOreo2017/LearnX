@@ -47,9 +47,9 @@ footer {
 	width: 96%;
 	clear: left;
 	text-align: center;
-	font-size: 0.45em;
+	font-size: 1.9em;
 	margin-top: 30px;
-	border-top: 2px solid rgba(130,2,230,1.00);
+	border-top: 5px solid rgba(130,2,230,1.00);
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 }
 
@@ -87,10 +87,8 @@ nav a:nth-of-type(4) {
 	clear: left
 }
 
-footer {
-	font-size: 0.9em;
-}
-}
+
+
 
 /* =============================================
 	Desktop layout styles used by  devices
@@ -120,7 +118,5 @@ body {
 	-webkit-box-shadow: rgba(20, 143,119, 0.9) 20px 0px 25px,  rgba(20, 143, 119, 0.9) -20px 0px 25px;
 	box-shadow: rgba(20, 143,119, 0.9) 20px 0px 25px,  rgba(20, 143, 119, 0.9) -20px 0px 25px
 }
-footer {
-	font-size: 1.2em;
-}
+
 }
