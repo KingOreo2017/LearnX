@@ -37,7 +37,7 @@ nav a:last-of-type {
 }
 
 nav a img {
-	display: flex;
+	display: block;
 	width: 100%;
 }
 
