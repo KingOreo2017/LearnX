@@ -40,7 +40,7 @@ nav a:last-of-type {
 }
 
 nav a img {
-	display: block;
+	display: grid;
 	width: 100%;
 }
 
