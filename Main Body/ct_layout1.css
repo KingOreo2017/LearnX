@@ -28,7 +28,8 @@ nav a {
 	margin-left: 0;
 	width: 50px;
 	float: none;
-	display: block;
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
 	height: 50px;
 	overflow: hidden;
 	margin-bottom: 5px;
