@@ -2,6 +2,7 @@
 
 html {
 	height: 100%;
+	font-size: 14px;
 }
 img, object, embed, video {
 	max-width: 100%;
@@ -12,7 +13,9 @@ header {
 }
 
 header img {
-	width: 100%;
+	width: 96%;
+	float: none;
+	margin: 2% 2% 0% 2%;
 }
 
 body {
@@ -90,7 +93,7 @@ nav a:nth-of-type(4) {
 }
 
 footer {
-	font-size: 0.8em;
+	font-size: 0.9em;
 }
 }
 
@@ -101,13 +104,16 @@ footer {
 */
 
 @media only screen and (min-width: 769px) {
+html, body {
+	font-size: 20px;
+}
 html {
 	background-color: rgba(163, 228, 215,1.00);
 	margin: 0px auto;
 }
 body {
 	width: 88.2%;
-	max-width: 800px;
+	max-width: 1300px;
 	padding-left: 0.9%;
 	padding-right: 0.9%;
 	margin: auto;
