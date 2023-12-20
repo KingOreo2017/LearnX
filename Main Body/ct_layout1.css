@@ -29,8 +29,7 @@ nav a {
 	margin-left: 0;
 	width: 25px;
 	float: none;
-	display: grid;
-	grid-template-columns: repeat(3,2);
+	display: block;
 	height: 25px;
 	overflow: hidden;
 	margin-bottom: 5px;
@@ -41,7 +40,7 @@ nav a:last-of-type {
 }
 
 nav a img {
-	display: grid;
+	display: block;
 	width: 100%;
 }
 
