@@ -34,7 +34,7 @@ nav a {
 }
 
 nav a:last-of-type {
-	margin: 15px;
+	margin-bottom: 30px;
 }
 
 nav a img {
