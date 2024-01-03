@@ -27,7 +27,7 @@ nav a {
 	margin-left: 0;
 	width: 96%;
 	float: left;
-	display: flex;
+	display: block;
 	height: 25px;
 	overflow: hidden;
 	margin-bottom: 5px;
