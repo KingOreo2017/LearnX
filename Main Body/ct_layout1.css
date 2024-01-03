@@ -10,7 +10,7 @@ img, object, embed, video {
 header {
 	
 	width: 100%;
-	
+	margin-top: 30px;
 	margin: 25px auto;
 }
 body {
@@ -69,7 +69,7 @@ body {
 nav a {
 	width: 32%;
 	height: auto;
-	float: none;
+	float: left;
 	clear: none;
 	overflow: visible;
 	margin-bottom: 0px;
@@ -77,6 +77,8 @@ nav a {
 nav a img {
  width: 100%;
  height: 100%;
+ padding-left: 15px;
+ padding-right: 15px;
 }
 
 nav a:nth-of-type(4) {
