@@ -5,6 +5,52 @@
    <title>Mixed Math</title>
    <link href="lxbase.css" rel="stylesheet" />
    <link href="ct_layout2.css" rel="stylesheet" />
+         <style>
+    /* Style the dropdown container */
+       .dropdown {
+         position: relative;
+         display: inline-block;
+       }
+   
+       /* Style the dropdown button */
+       .dropdown-btn {
+         padding: 8px;
+         background-color: black;
+         color: white;
+         border: none;
+         cursor: pointer;
+       }
+   
+       /* Style the dropdown content (hidden by default) */
+       .dropdown-content {
+         display: none;
+         position: absolute;
+         background-color: none;
+         min-width: 5px;
+         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+         z-index: 1;
+       }
+   
+       /* Style the links inside the dropdown */
+       .dropdown-content a {
+         padding: 7px 5px;
+         display: block;
+         color: #333;
+         text-decoration: none;
+       }
+   
+       /* Change color on hover */
+       .dropdown-content a:hover {
+         background-color: #ddd;
+       }
+   
+       /* Show the dropdown menu on hover */
+       .dropdown:hover .dropdown-content {
+         display: block;
+       }
+     </style>
+   </head>
+
 </head>
 
 <body>
@@ -22,7 +68,27 @@
         </ul>
     </nav>
   <article>
-  </article>
+     <h1>Subtraction</h1>
+     <body>
+   
+   <!-- The dropdown container -->
+   <div class="dropdown">
+    <button class="dropdown-btn">Unit 4</button>
+     <div class="dropdown-content">
+       <a href="#">Lesson 1</a>
+     </div>
+   </div>
+   <div class="dropdown">
+    <button class="dropdown-btn">Unit 5</button>
+     <div class="dropdown-content">
+       <a href="#">Lesson 1</a>
+     </div>
+    <div class="dropdown">
+       <button class="dropdown-btn">Unit 6</button> 
+     <div class="dropdown-content">
+       <a href="#">Lesson 1</a>
+   </div>
+   </article>
   <footer>
      LearnX &#8226; 1215 Campbell Drive, Sidney, OH &nbsp; 45365 &#8226; 444-444-4444
    </footer>
