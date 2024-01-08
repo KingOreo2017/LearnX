@@ -5,7 +5,7 @@ html {
 	font-size: 14px;
 }
 img, object, embed, video {
-	max-width: 100%;
+	max-width: 33%;
 }
 header {
 	
@@ -70,7 +70,7 @@ body {
 nav a {
 	width: 96%;
 	height: auto;
-	float: left;
+	float: none;
 	clear: none;
 	overflow: visible;
 	margin-bottom: 0px;
