@@ -216,7 +216,13 @@ blockquote p:first-of-type:before {
 
 
 footer {
-	font-size: 1.2em;
+	width: 96%;
+	clear: left;
+	text-align: center;
+	font-size: .9em;
+	margin-top: 30px;
+	border-top: 5px solid rgba(130,2,230,1.00);
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 }
 }
 
