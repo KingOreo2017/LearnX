@@ -101,14 +101,14 @@ html, body {
 }
 html {
 	background-color: rgba(163, 228, 215,1.00);
-	margin: 0 auto;
+	margin: 0px auto;
 }
 body {
 	width: 88.2%;
-	max-width: 800px;
+	max-width: 1300px;
 	padding-left: 0.9%;
 	padding-right: 0.9%;
-	margin: auto;
+	margin: 0px auto auto auto;
 	margin-left: auto;
 	background-color: #DFF5F1; /*This is light blue I think on the main page behind the pictures and below this should change the big background to dark teal/blue */
 	-moz-box-shadow: rgba(20, 143, 119, 0.9) 20px 0px 25px,  rgba(20, 143, 119, 0.9) -20px 0px 25px;
