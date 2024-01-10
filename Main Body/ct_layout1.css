@@ -9,8 +9,9 @@ html {
 header {
 	float:center;
 	width: 100%;
-	padding: 30px ;
+	padding: 60px ;
 	margin: 30px ;
+ 
 }
 body {
 	margin-left: auto;
@@ -40,7 +41,7 @@ nav a img {
 }
 
 footer {
-	width: 96%;
+	width: 85%;
 	clear: left;
     float: clear;
 	text-align: center;
@@ -66,8 +67,8 @@ body {
 	margin-left: auto;
 }
 nav a {
-	width:33%;
-	height: 40%;
+	width:30%;
+	height: 30%;
 	float: center;
 	clear: center;
 	display:inline-table;
@@ -78,8 +79,8 @@ nav a img {
  width: 85%;
  height: 33%;
  margin-top:30px;
- padding-left: 15px;
- padding-right: 15px;
+ padding-left: 1px;
+ padding-right: 1px;
  flaot: center; 
 }
 
