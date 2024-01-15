@@ -1,0 +1,23 @@
+document.addEventListener("DOMContentLoaded", event => {
+    const app = firebase.app();
+
+    // Check authentication status on page load
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+
+            console.log("Redirecting to /Main Body/index.html")
+            window.location.href = '/Main Body/index.html';
+        }
+        else {
+            console.error("User not authenticated");
+        }
+    });
+});
+
+function googleLogin() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+        .catch(error => {
+            console.error("Google login error:", error);
+        });
+}

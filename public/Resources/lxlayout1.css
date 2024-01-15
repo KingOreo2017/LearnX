@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+html {
+    height: 100%;
+    font-size: 14px;
+}
+
+header {
+    text-align: center;
+    padding: 60px;
+    margin: 30px;
+}
+
+body {
+    margin: 20px;
+    width: 100%;
+    padding-left: 4.45%;
+    padding-right: 4.45%;
+    min-height: 100%;
+}
+
+nav {
+    text-align: center; /* Center the navigation links */
+}
+
+    nav a {
+        display: inline-block;
+        width: 30%; /* Set the width to 30% for a 3-column layout */
+        margin: 1%; /* Add spacing between icons */
+        height: 150px; /* Adjust the height as needed */
+        margin-bottom: 20px;
+    }
+
+        nav a:last-of-type {
+            margin-bottom: 0; /* Remove the extra margin for the last icon in a row */
+        }
+
+        nav a img {
+            width: 100%;
+            height: auto;
+        }
+
+footer {
+    width: 85%;
+    clear: both;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 1.2em;
+    border-top: 5px solid rgba(130, 2, 230, 1.00);
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+
+/* Tablet layout styles */
+@media only screen and (min-width: 481px) {
+    body {
+        padding-left: 1.55%;
+        padding-right: 1.55%;
+    }
+
+    nav a {
+        width: 30%;
+        height: 350px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Desktop layout styles */
+@media only screen and (min-width: 769px) {
+    html, body {
+        font-size: 23px;
+    }
+
+    html {
+        background-color: rgba(163, 228, 215, 1.00);
+        margin: 20px auto;
+    }
+
+    body {
+        width: 88.2%;
+        max-width: 1300px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;
+        margin: auto;
+        margin-left: auto;
+        background-color: #DFF5F1;
+        box-shadow: rgba(20, 143, 119, 0.9) 20px 0px 25px, rgba(20, 143, 119, 0.9) -20px 0px 25px;
+    }
+}
