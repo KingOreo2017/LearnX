@@ -3,12 +3,12 @@
 <head>
     <title>LearnX</title>
     <meta charset="utf-8" />
+    <!-- Include css files and scripts -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-    <!-- update the version number as needed -->
     <script defer src="/__/firebase/10.7.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
+    <!-- include Firebase-->
     <script defer src="/__/firebase/10.7.1/firebase-auth-compat.js"></script>
     <script defer src="/__/firebase/10.7.1/firebase-database-compat.js"></script>
     <script defer src="/__/firebase/10.7.1/firebase-firestore-compat.js"></script>
@@ -25,12 +25,11 @@
     <link href="/Resources/lxlayout1.css" rel="stylesheet" />
 </head>
 <header>
-     <!-- Script header and formatting-->
     <a href="/Main Body/index.html"><img src="/Resources/LearnXBanner.png" alt="Learn X" /></a>
 </header>
 <body>
     <nav>
-        <!-- Tab Directories-->
+
         <a href="/Main Body/Addition/addition.html"><img src="/Resources/additionfinal.png" alt="Addition" /></a>
         <a href="/Main Body/Subtraction/subtraction.html"><img src="/Resources/subtractionfinal.png" alt="Subtraction" /></a>
         <a href="/Main Body/Mixed Math/mixedmath.html"><img src="/Resources/mixedmathfinal.png" alt="mixedmath" /></a>
@@ -38,8 +37,8 @@
         <a href="/Main Body/profile.html"><img src="/Resources/profilepicfinal.png" alt="Profile" /></a>
         <a href="/Main Body/contact.html"><img src="/Resources/contactfinal.png" alt="Contact Us" /></a>
     </nav>
-    <!-- Look of back to login button-->
-    <style>
+    <style> 
+        /* Formats Back to Login button */
         .backToLogin {
             margin-bottom: 20px;
             padding: 20px;
@@ -53,9 +52,8 @@
     </style>
     <footer>
         LearnX &#8226; 1215 Campbell Road, Sidney OH 45365 &#8226; 444-444-4444
-
+        <!-- Creates an instance of Back to Login button -->
         <div class="custom-buttons">
-            <!--Returns to login page-->
             <a id="backToLogin" href="/LearnX/Login/index.html">Back to Login</a>
         </div>
     </footer>
