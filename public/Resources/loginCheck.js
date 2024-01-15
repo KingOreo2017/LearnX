@@ -1,3 +1,4 @@
+// Checks to see if user is logged in, and if so, redirects to /Login/index.html
 document.addEventListener("DOMContentLoaded", event => {
     const app = firebase.app();
     firebase.auth().onAuthStateChanged(user => {
