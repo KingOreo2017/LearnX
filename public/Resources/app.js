@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", event => {
         }
     });
 });
-
+// Create popup and signs in user
 function googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
