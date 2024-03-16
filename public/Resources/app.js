@@ -21,3 +21,4 @@ function googleLogin() {
             console.error("Google login error:", error);
         });
 }
+// Hopefully this works
