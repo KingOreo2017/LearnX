@@ -7,6 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump Environment Information
+        run: |
+          echo "GitHub Actions Environment Information:"
+          env
+          echo "System Information:"
+          uname -a
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node.js
