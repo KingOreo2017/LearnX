@@ -18,4 +18,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: ${{ secrets.1//05kv95sfLc-YmCgYIARAAGAUSNwF-L9IrbcUlZmb2FD7fsDCD0Z20XzaaihMFMucc1_HHTE1Ayjxqeqvk0qTtCeQb_muAXxfWX68}}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN}}
