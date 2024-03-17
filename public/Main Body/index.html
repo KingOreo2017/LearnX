@@ -39,15 +39,15 @@
     </nav>
     <script>
     function writeData() {
-        var database = firebase.database();
-        var databaseRef = database.ref("https://learnx-84f4d-default-rtdb.firebaseio.com/"); // Update with your desired path
+    var database = firebase.database();
+    var databaseRef = database.ref(); // Initialize the reference to the root of the database
 
-        // Write data to the specific location in the database
-        databaseRef.set({
-            writeButton: true,
-            // Add more key-value pairs as needed
-        });
-    }
+    // Write data to the specific location in the database
+    databaseRef.child("https://learnx-84f4d-default-rtdb.firebaseio.com/").set({
+        writeButton: true,
+        // Add more key-value pairs as needed
+    });
+}
     </script>
     <button onclick="writeData()">Write to Database</button>
     <style> 
