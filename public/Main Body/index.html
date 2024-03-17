@@ -37,6 +37,17 @@
         <a href="/Main Body/profile.html"><img src="/Resources/profilepicfinal.png" alt="Profile" /></a>
         <a href="/Main Body/contact.html"><img src="/Resources/contactfinal.png" alt="Contact Us" /></a>
     </nav>
+    <script>
+        var database = firebase.database();
+        var databaseRef = database.refFromURL("https://learnx-84f4d-default-rtdb.firebaseio.com/");
+
+    // Write data to the specific location in the database
+    databaseRef.set({
+      writeButton: 1,
+      // Add more key-value pairs as needed
+    });
+    </script>
+    <button onclick="writeData()">Write to Database</button>
     <style> 
         /* Formats Back to Login button */
         .backToLogin {
