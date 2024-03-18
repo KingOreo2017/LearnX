@@ -38,6 +38,22 @@
         <a href="/Main Body/contact.html"><img src="/Resources/contactfinal.png" alt="Contact Us" /></a>
     </nav>
     <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+      apiKey: "AIzaSyD16OutoobyzMmcB4Rq8YjQloZ3NvgVkws",
+      authDomain: "learnx-84f4d.firebaseapp.com",
+      databaseURL: "https://learnx-84f4d-default-rtdb.firebaseio.com",
+      projectId: "learnx-84f4d",
+      storageBucket: "learnx-84f4d.appspot.com",
+      messagingSenderId: "430897320448",
+      appId: "1:430897320448:web:07ecef5de0b525d022fee5",
+      measurementId: "G-BBBDS47CHV"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
     function writeData() {
     var database = firebase.database();
     var databaseRef = database.ref(); // Initialize the reference to the root of the database
