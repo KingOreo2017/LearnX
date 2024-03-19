@@ -59,9 +59,15 @@
     var databaseRef = database.ref(); // Initialize the reference to the root of the database
 
     // Write data to the specific location in the database
-    databaseRef.child("writeButton").set({
-        writeButton: true,
-    });
+    databaseRef.once('value', function(snapshot) {
+        var writeButtonValue = snapshot.val();
+
+        // Toggle the value of writeButton
+        var newValue = !writeButtonValue;
+
+        // Update writeButton in the database
+        databaseRef.set(newValue);
+        });
 }
     </script>
     <button onclick="writeData()">Write to Database</button>
