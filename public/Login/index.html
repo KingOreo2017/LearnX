@@ -28,7 +28,7 @@
 </head>
 <body> <!-- Page Mainbody -->
     <script src="/Resources/app.js"></script>
-    <button onclick="googleLogin()">
+    <button <style> height: 100px; width: 300px </style> onclick="googleLogin()">
         Login with Google
     </button>
     
@@ -68,7 +68,7 @@
 
             // Set the user information (email in this case) under the user's node
             userRef.set({
-                email: email,
+                email: email
                 accountType: "student"
             });
         }
