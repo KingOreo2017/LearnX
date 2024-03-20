@@ -28,8 +28,8 @@
         img {
             height: 250px
             Width: 250px
-            font-size: 18px; /* Increase the font size */
-            padding: 10px 20px; /* Adjust padding for better button size */
+            font-size: 18px;
+            padding: 10px 20px;
         }
     </style>
 </head>
@@ -47,40 +47,7 @@
         <a href="/Main Body/profile.html"><img src="/Resources/profilepicfinal.png" alt="Profile" /></a>
         <a href="/Main Body/contact.html"><img src="/Resources/contactfinal.png" alt="Contact Us" /></a>
     </nav>
-    <script>
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-      apiKey: "AIzaSyD16OutoobyzMmcB4Rq8YjQloZ3NvgVkws",
-      authDomain: "learnx-84f4d.firebaseapp.com",
-      databaseURL: "https://learnx-84f4d-default-rtdb.firebaseio.com",
-      projectId: "learnx-84f4d",
-      storageBucket: "learnx-84f4d.appspot.com",
-      messagingSenderId: "430897320448",
-      appId: "1:430897320448:web:07ecef5de0b525d022fee5",
-      measurementId: "G-BBBDS47CHV"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
 
-    <script>
-    function writeData() {
-    var database = firebase.database();
-    var databaseRef = database.ref(); // Initialize the reference to the root of the database
-
-    // Write data to the specific location in the database
-    databaseRef.once('value', function(snapshot) {
-        var writeButtonValue = snapshot.val();
-
-        // Toggle the value of writeButton
-        var newValue = !writeButtonValue;
-
-        // Update writeButton in the database
-        databaseRef.set(newValue);
-        });
-}
-    </script>
-    <button onclick="writeData()">Write to Database</button>
     <style> 
         /* Formats Sign Out button */
         .Sign Out {
