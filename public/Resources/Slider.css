@@ -15,7 +15,7 @@ slider
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
+    width: 2500px;
     height: 25px;
     border-radius: 50%;
     background: #04AA6D;
