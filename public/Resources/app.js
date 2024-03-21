@@ -15,5 +15,5 @@ function googleLogin() {
 function writeUserData(userId, displayName, email) {
     var usersRef = firebase.database().ref('users');
     var userRef = usersRef.child(displayName);
-
+}
     
