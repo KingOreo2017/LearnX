@@ -3,6 +3,7 @@ function googleLogin() {
     firebase.auth().signInWithPopup(provider)
         .then((result) => {
             const user = result.user;
+            console.log("Inside .then((result)!")
             writeUserData(user.uid, user.displayName, user.email);
 
             window.location.href = '/Main Body/index.html';
@@ -17,7 +18,7 @@ function writeUserData(userId, displayName, email) {
 
     // Check if the user already exists in the database
     usersRef.child(userId).once('value', function(snapshot) {
-        alert("writeUserData ran!")
+        console.log("writeUserData ran!")
         if (!snapshot.exists()) {
             // If the user doesn't exist, write their information to the database
             usersRef.child(userId).set({
