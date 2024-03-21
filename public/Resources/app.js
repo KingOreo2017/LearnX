@@ -17,6 +17,7 @@ function writeUserData(userId, displayName, email) {
 
     // Check if the user already exists in the database
     usersRef.child(userId).once('value', function(snapshot) {
+        alert("writeUserData ran!")
         if (!snapshot.exists()) {
             // If the user doesn't exist, write their information to the database
             usersRef.child(userId).set({
