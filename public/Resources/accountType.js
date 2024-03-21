@@ -10,6 +10,3 @@ function addUser(username, email) {
         email: email
     });
 }
-
-// Usage example
-addUser("KingOreo2017", "kingorreo@gmail.com");
