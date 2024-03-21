@@ -14,10 +14,16 @@ function googleLogin() {
 
 function writeUserData(userId, displayName, email) {
     var usersRef = firebase.database().ref('users');
-    var userRef = usersRef.child(displayName);
 
-    userRef.set({
-        displayName: displayName,
-        email: email
+    // Check if the user already exists in the database
+    usersRef.child(userId).once('value', function(snapshot) {
+        if (!snapshot.exists()) {
+            // If the user doesn't exist, write their information to the database
+            usersRef.child(userId).set({
+                displayName: displayName,
+                email: email
+                // You can add more user data here if needed
+            });
+        }
     });
 }
