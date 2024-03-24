@@ -13,7 +13,7 @@ function googleLogin() {
         });
 }
 
-function writeUserDataToDatabase(user) {
+firebase.auth().onAuthStateChanged(user => {
     if (user) {
         const username = user.displayName; // Assuming the username is stored in displayName
         const email = user.email;
@@ -45,4 +45,4 @@ function writeUserDataToDatabase(user) {
     } else {
         console.error("User not authenticated");
     }
-}
+});
