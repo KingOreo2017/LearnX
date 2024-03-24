@@ -13,19 +13,36 @@ function googleLogin() {
         });
 }
 
-function writeUserData(userId, displayName, email) {
-    var usersRef = firebase.database().ref('users');
+function writeUserDataToDatabase(user) {
+    if (user) {
+        const username = user.displayName; // Assuming the username is stored in displayName
+        const email = user.email;
+        const photoURL = user.photoURL;
 
-    // Check if the user already exists in the database
-    usersRef.child(userId).once('value', function(snapshot) {
-        console.log("writeUserData ran!")
-        if (!snapshot.exists()) {
-            // If the user doesn't exist, write their information to the database
-            usersRef.child(userId).set({
-                displayName: displayName,
-                email: email
-                // You can add more user data here if needed
-            });
-        }
-    });
+        const database = firebase.database();
+        const usersRef = database.ref('users');
+
+        // Check if the user already exists in the database
+        usersRef.child(username).once('value', snapshot => {
+            if (!snapshot.exists()) {
+                // If the user doesn't exist, create a new node with their information
+                const userRef = usersRef.child(username);
+
+                // Set the user information (email, profile picture, and accountType) under the user's node
+                userRef.set({
+                    email: email,
+                    profilePicture: photoURL,
+                    accountType: "student" // Set accountType to "student" by default
+                }).then(() => {
+                    console.log("User data added to the database successfully!");
+                }).catch(error => {
+                    console.error("Error adding user data to the database:", error);
+                });
+            } else {
+                console.log("User already exists in the database.");
+            }
+        });
+    } else {
+        console.error("User not authenticated");
+    }
 }
