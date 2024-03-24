@@ -25,75 +25,12 @@
     <link href="/Resouces/lxbase.css" rel="stylesheet" />
     <link href="/Resources/lxlayout2.css" rel="stylesheet" />
 
-    <style>
-        button {
-            height: 50px;
-            width: 200px;
-            font-size: 18px; /* Increase the font size */
-            padding: 10px 20px; /* Adjust padding for better button size */
-        }
-
-        /* Adjust button size for specific buttons if needed */
-        /* For example, to target the "Login with Google" button */
-        /* You can use a more specific selector like: button[onclick="googleLogin()"] */
-    </style>
 </head>
 <body> <!-- Page Mainbody -->
     <script src="/Resources/app.js"></script>
     <button onclick="googleLogin()">
         Login with Google
     </button>
-    
-    <form id="addUserForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <button type="submit">Add User</button>
-    </form>
-
-    <script>
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-      apiKey: "AIzaSyD16OutoobyzMmcB4Rq8YjQloZ3NvgVkws",
-      authDomain: "learnx-84f4d.firebaseapp.com",
-      databaseURL: "https://learnx-84f4d-default-rtdb.firebaseio.com",
-      projectId: "learnx-84f4d",
-      storageBucket: "learnx-84f4d.appspot.com",
-      messagingSenderId: "430897320448",
-      appId: "1:430897320448:web:07ecef5de0b525d022fee5",
-      measurementId: "G-BBBDS47CHV"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-
-    <script>
-        function addUser(username, email) {
-            // Get a reference to the "users" node
-            var usersRef = firebase.database().ref('users');
-
-            // Create a new child node under "users" with the username as the key
-            var userRef = usersRef.child(username);
-
-            // Set the user information (email in this case) under the user's node
-            userRef.set({
-                email: email,
-                accountType: "student"
-            });
-        }
-        
-         document.getElementById('addUserForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var username = document.getElementById('username').value;
-            var email = document.getElementById('email').value;
-            addUser(username, email);
-            alert('User added successfully!');
-            // Optionally, you can redirect or perform other actions here
-        });
-    </script>
 
     <footer>
         LearnX &#8226; 1215 Campbell Drive, Sidney, OH &nbsp; 45365 &#8226; 444-444-4444
