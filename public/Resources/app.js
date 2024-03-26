@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to write user data to the database
     function writeUserDataToDatabase(user) {
-        alert("1");
         if (user) {
             const username = user.displayName;
             const email = user.email;
@@ -17,18 +16,21 @@ document.addEventListener("DOMContentLoaded", function() {
             usersRef.child(username).once('value', snapshot => {
                 if (!snapshot.exists()) {
                     const userRef = usersRef.child(username);
-
+                    alert("3");
                     userRef.set({
                         email: email,
                         profilePicture: photoURL,
                         accountType: "student"
                     }).then(() => {
                         console.log("User data added to the database successfully!");
+                        alert("5");
                     }).catch(error => {
                         console.error("Error adding user data to the database:", error);
+                        alert("4");
                     });
                 } else {
                     console.log("User already exists in the database.");
+                    alert("6");
                 }
             });
         } else {
@@ -38,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to handle Google login
     function googleLogin() {
-        alert("2");
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
