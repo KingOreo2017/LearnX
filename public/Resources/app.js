@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const usersRef = database.ref('users');
 
             usersRef.child(username).once('value', snapshot => {
+                alert(JSON.stringify(snapshot));
                 if (!snapshot.exists()) {
                     const userRef = usersRef.child(username);
                     alert("3");
