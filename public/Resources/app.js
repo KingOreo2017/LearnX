@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const database = firebase.database();
             const usersRef = database.ref('users');
-
+            alert(username);
             usersRef.child(username).once('value', snapshot => {
                 alert("2");
                 if (!snapshot.exists() || snapshot.val() === null) {
