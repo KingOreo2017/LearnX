@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to write user data to the database
     function writeUserDataToDatabase(user) {
+        alert("1");
         if (user) {
             const username = user.displayName;
             const email = user.email;
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to handle Google login
     function googleLogin() {
+        alert("2");
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
