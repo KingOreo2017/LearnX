@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log("User already exists in the database.");
                     alert("6");
                 }
+            }, error => {
+                console.error("Error fetching data:", error);
+                alert("Error fetching data: " + JSON.stringify(error));
             });
         } else {
             console.error("User not authenticated");
