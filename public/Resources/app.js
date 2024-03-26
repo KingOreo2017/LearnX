@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to write user data to the database
     function writeUserDataToDatabase(user) {
-        alert("1);
+        alert("1");
         if (user) {
-            alert("2);
+            alert("2");
             const username = user.displayName;
             const email = user.email;
             const photoURL = user.photoURL;
