@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to write user data to the database
     function writeUserDataToDatabase(user) {
         if (user) {
+            alert("1");
             const username = user.displayName;
             const email = user.email;
             const photoURL = user.photoURL;
@@ -14,7 +15,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const usersRef = database.ref('users');
 
             usersRef.child(username).once('value', snapshot => {
+                alert("2");
                 if (!snapshot.exists() || snapshot.val() === null) {
+                    alert("3");
                     const userRef = usersRef.child(username);
                     userRef.set({
                         email: email,
@@ -40,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
                 const user = result.user;
-                alert(JSON.stringify(user));
                 console.log("Inside .then((result)!");
                 writeUserDataToDatabase(user);
                 window.location.href = '/Main Body/index.html';
