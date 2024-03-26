@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
                 const user = result.user;
-                alert(user);
+                alert(JSON.stringify(user));
                 console.log("Inside .then((result)!");
                 writeUserDataToDatabase(user);
                 window.location.href = '/Main Body/index.html';
