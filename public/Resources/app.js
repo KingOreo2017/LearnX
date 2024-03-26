@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to write user data to the database
     function writeUserDataToDatabase(user) {
-        alert("1");
         if (user) {
-            alert("2");
             const username = user.displayName;
             const email = user.email;
             const photoURL = user.photoURL;
@@ -16,32 +14,23 @@ document.addEventListener("DOMContentLoaded", function() {
             const usersRef = database.ref('users');
 
             usersRef.child(username).once('value', snapshot => {
-                alert(JSON.stringify(snapshot));
-                if (!snapshot.exists()) {
+                if (!snapshot.exists() || snapshot.val() === null) {
                     const userRef = usersRef.child(username);
-                    alert("3");
                     userRef.set({
                         email: email,
                         profilePicture: photoURL,
                         accountType: "student"
                     }).then(() => {
                         console.log("User data added to the database successfully!");
-                        alert("5");
                     }).catch(error => {
                         console.error("Error adding user data to the database:", error);
-                        alert("4");
                     });
                 } else {
                     console.log("User already exists in the database.");
-                    alert("6");
                 }
-            }, error => {
-                console.error("Error fetching data:", error);
-                alert("Error fetching data: " + JSON.stringify(error));
             });
         } else {
             console.error("User not authenticated");
-            alert("FUCK");
         }
     }
 
