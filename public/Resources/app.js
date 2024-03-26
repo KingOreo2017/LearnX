@@ -1,5 +1,3 @@
-import { getDatabase } from "firebase/database";
-
 const database = getDatabase();
 function writeUserDataToDatabase(user) {
     if (user) {
