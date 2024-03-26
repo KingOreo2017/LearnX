@@ -1,4 +1,3 @@
-const database = getDatabase();
 function writeUserDataToDatabase(user) {
     if (user) {
         const username = user.displayName;
