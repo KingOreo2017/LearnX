@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         } else {
             console.error("User not authenticated");
+            alert("FUCK");
         }
     }
 
