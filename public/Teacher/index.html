@@ -29,14 +29,30 @@
     <a href="/Student/index.html"><img src="/Resources/LearnXBanner.png" alt="Learn X" /></a>
 </header>
 <body>
-    <nav>
-        <a href="/Student/Addition/addition.html"><img src="/Resources/additionfinal.png" alt="Addition" /></a>
-        <a href="/Student/Subtraction/subtraction.html"><img src="/Resources/subtractionfinal.png" alt="Subtraction" /></a>
-        <a href="/Student/Mixed Math/mixedmath.html"><img src="/Resources/mixedmathfinal.png" alt="mixedmath" /></a>
-        <a href="/Student/aboutus.html"><img src="/Resources/aboutusfinal.png" alt="About Us" /></a>
-        <a href="/Student/profile.html"><img src="/Resources/profilepicfinal.png" alt="Profile" /></a>
-        <a href="/Student/contact.html"><img src="/Resources/contactfinal.png" alt="Contact Us" /></a>
-    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const usersRef = firebase.database().ref('users');
+            usersRef.once('value', (snapshot) => {
+                const userList = document.getElementById("user-list");
+                snapshot.forEach((childSnapshot) => {
+                    const username = childSnapshot.key;
+                    const userData = childSnapshot.val();
+                    const email = userData.email;
+                    const profilePicture = userData.profilePicture;
+                    const accountType = userData.accountType;
+
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = `
+                        <strong>Username:</strong> ${username}<br>
+                        <strong>Email:</strong> ${email}<br>
+                        <strong>Profile Picture:</strong> <img src="${profilePicture}" alt="Profile Picture" style="width: 100px;"><br>
+                        <strong>Account Type:</strong> ${accountType}<br>
+                    `;
+                    userList.appendChild(listItem);
+                });
+            });
+        });
+    </script>
 
     <style> 
         /* Formats Sign Out button */
