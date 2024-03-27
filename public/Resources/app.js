@@ -41,7 +41,7 @@ function writeUserDataToDatabase(user) {
                 const user = result.user;
                 alert("Inside .then((result)!");
                 writeUserDataToDatabase(user);
-                window.location.href = '/Main Body/index.html';
+                //window.location.href = '/Main Body/index.html';
             })
             .catch(error => {
                 alert("Google login error:", error);
