@@ -1,21 +1,16 @@
-// Wait for the DOM content to be loaded before executing the script
-document.addEventListener("DOMContentLoaded", function() {
-    // Initialize Firebase with your configuration object
-    firebase.initializeApp(firebaseConfig);
+function writeUserDataToDatabase(user) {
+    if (user) {
+        alert("1");
+        const username = user.displayName;
+        const email = user.email;
+        const photoURL = user.photoURL;
 
-    // Function to write user data to the database
-    function writeUserDataToDatabase(user) {
-        if (user) {
-            alert("1");
-            const username = user.displayName;
-            const email = user.email;
-            const photoURL = user.photoURL;
+        const database = firebase.database();
+        const usersRef = database.ref('users');
 
-            const database = firebase.database();
-            const usersRef = database.ref('users');
-            alert(usersRef.toString());
-            usersRef.child(username).once('value', snapshot => {
-                alert("2");
+        usersRef.child(username).once('value', snapshot => {
+            alert("2"); // Check if this alert is triggered
+            try {
                 if (!snapshot.exists() || snapshot.val() === null) {
                     alert("3");
                     const userRef = usersRef.child(username);
@@ -24,20 +19,24 @@ document.addEventListener("DOMContentLoaded", function() {
                         profilePicture: photoURL,
                         accountType: "student"
                     }).then(() => {
-                        console.log("User data added to the database successfully!");
+                        alert("User data added to the database successfully!");
                     }).catch(error => {
-                        console.error("Error adding user data to the database:", error);
+                        alert("Error adding user data to the database:", error);
                     });
                 } else {
-                    console.log("User already exists in the database.");
+                    alert("User already exists in the database.");
                 }
-            });
-            
-        } else {
-            console.error("User not authenticated");
-        }
+            } catch (error) {
+                alert("Error processing snapshot:", error);
+            }
+        }).catch(error => {
+            alert("Error fetching user data from the database:", error);
+        });
+        
+    } else {
+        alert("User not authenticated");
     }
-
+}
     // Function to handle Google login
     function googleLogin() {
         const provider = new firebase.auth.GoogleAuthProvider();
