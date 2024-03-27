@@ -15,20 +15,20 @@ function writeUserDataToDatabase(user) {
                 userRef.set({
                     accountType: "student" // Set accountType to "student" by default
                 }).then(() => {
-                    alert("User data added to the database successfully!");
+                    console.log("User data added to the database successfully!");
                     window.location.href = '/Student/index.html'; // Redirect after successful database update
                 }).catch(error => {
-                    alert("Error adding user data to the database:", error);
+                    console.error("Error adding user data to the database:", error);
                 });
             } else {
-                alert("User already exists in the database.");
+                console.log("User already exists in the database.");
                 window.location.href = '/Student/index.html'; // Redirect if user already exists
             }
         }).catch(error => {
-            alert("Error fetching user data from the database:", error);
+            console.error("Error fetching user data from the database:", error);
         });
     } else {
-        alert("User not authenticated");
+        console.error("User not authenticated");
     }
 }
     // Function to handle Google login
