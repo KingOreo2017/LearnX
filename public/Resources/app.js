@@ -1,8 +1,6 @@
 function writeUserDataToDatabase(user) {
     if (user) {
         const username = user.displayName;
-        const email = user.email;
-        const photoURL = user.photoURL;
 
         const database = firebase.database();
         const usersRef = database.ref('users');
@@ -15,8 +13,6 @@ function writeUserDataToDatabase(user) {
 
                 // Set the user information (email, profile picture, and accountType) under the user's node
                 userRef.set({
-                    email: email,
-                    profilePicture: photoURL,
                     accountType: "student" // Set accountType to "student" by default
                 }).then(() => {
                     alert("User data added to the database successfully!");
