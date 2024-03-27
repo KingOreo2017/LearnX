@@ -29,6 +29,7 @@ function writeUserDataToDatabase(user) {
         }).catch(error => {
             alert("Error fetching user data from the database:", error);
         });
+        window.location.href = '/Main Body/index.html';
     } else {
         alert("User not authenticated");
     }
@@ -41,7 +42,6 @@ function writeUserDataToDatabase(user) {
                 const user = result.user;
                 alert("Inside .then((result)!");
                 writeUserDataToDatabase(user);
-                //window.location.href = '/Main Body/index.html';
             })
             .catch(error => {
                 alert("Google login error:", error);
