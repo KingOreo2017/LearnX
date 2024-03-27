@@ -54,4 +54,3 @@ function writeUserDataToDatabase(user) {
 
     // Attach Google login function to the button click event
     document.querySelector('button').addEventListener('click', googleLogin);
-});
