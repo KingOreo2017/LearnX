@@ -39,12 +39,12 @@ function writeUserDataToDatabase(user) {
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
                 const user = result.user;
-                console.log("Inside .then((result)!");
+                alert("Inside .then((result)!");
                 writeUserDataToDatabase(user);
                 window.location.href = '/Main Body/index.html';
             })
             .catch(error => {
-                console.error("Google login error:", error);
+                alert("Google login error:", error);
             });
     }
 
