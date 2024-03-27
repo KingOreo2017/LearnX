@@ -46,7 +46,7 @@
                     const listItem = document.createElement("li");
                     listItem.innerHTML = `
                         <strong>Username:</strong> ${username}<br>
-                        <strong>Email:</strong> ${email}<br>
+                        <strong>Email:</strong> <a href="mailto:${email}">${email}</a><br>
                         <strong>Profile Picture:</strong> <img src="${profilePicture}" alt="Profile Picture" style="width: 100px;"><br>
                         <strong>Account Type:</strong> ${accountType}<br>
                     `;
