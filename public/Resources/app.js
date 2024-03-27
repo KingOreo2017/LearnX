@@ -20,13 +20,13 @@ function writeUserDataToDatabase(user) {
                     accountType: "student" // Set accountType to "student" by default
                 }).then(() => {
                     alert("User data added to the database successfully!");
-                    window.location.href = 'Student/index.html'; // Redirect after successful database update
+                    window.location.href = 'public/Student/index.html'; // Redirect after successful database update
                 }).catch(error => {
                     alert("Error adding user data to the database:", error);
                 });
             } else {
                 alert("User already exists in the database.");
-                window.location.href = 'Student/index.html'; // Redirect if user already exists
+                window.location.href = 'public/Student/index.html'; // Redirect if user already exists
             }
         }).catch(error => {
             alert("Error fetching user data from the database:", error);
