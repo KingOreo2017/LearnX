@@ -14,28 +14,24 @@ document.addEventListener("DOMContentLoaded", function() {
             const database = firebase.database();
             const usersRef = database.ref('users');
             alert(usersRef.toString());
-            usersRef.child(username).once('value')
-                .then(snapshot => {
-                    alert("2");
-                    if (!snapshot.exists() || snapshot.val() === null) {
-                        alert("3");
-                        const userRef = usersRef.child(username);
-                        userRef.set({
-                            email: email,
-                            profilePicture: photoURL,
-                            accountType: "student"
-                        }).then(() => {
-                            console.log("User data added to the database successfully!");
-                        }).catch(error => {
-                            console.error("Error adding user data to the database:", error);
-                        });
-                    } else {
-                        console.log("User already exists in the database.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Error reading user data from the database:", error);
-                });
+            usersRef.child(username).once('value', snapshot => {
+                alert("2");
+                if (!snapshot.exists() || snapshot.val() === null) {
+                    alert("3");
+                    const userRef = usersRef.child(username);
+                    userRef.set({
+                        email: email,
+                        profilePicture: photoURL,
+                        accountType: "student"
+                    }).then(() => {
+                        console.log("User data added to the database successfully!");
+                    }).catch(error => {
+                        console.error("Error adding user data to the database:", error);
+                    });
+                } else {
+                    console.log("User already exists in the database.");
+                }
+            });
             
         } else {
             console.error("User not authenticated");
